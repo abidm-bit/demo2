@@ -11,7 +11,7 @@
         <classes>
             <class name="DQAFrameTest" />
             <class name="DQAWindowTest"/>
-            <class name="TAPTests" />
+            <class name="TAPTests"/>
         </classes>
     </test>
 

@@ -1,4 +1,4 @@
-import org.apache.logging.log4j.core.util.FileUtils;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
@@ -24,15 +24,15 @@ public class Listerine extends Base implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-//        DateFormat dateFormat = new SimpleDateFormat("MMM.dd.yyyy hh:mm aaa");
-//        Date date = new Date();
-//        String name = dateFormat.format(date);
-//        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//        try {
-//            FileUtils.copyFile(file, new File("src/test/failedTests/" + name +".png"));
-//        } catch (IOException e) {
-//
-//        }
+        DateFormat dateFormat = new SimpleDateFormat("MMM.dd.yyyy hh:mm aaa");
+        Date date = new Date();
+        String name = dateFormat.format(date);
+        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File("src/test/failedTests/" + name +".png"));
+        } catch (IOException e) {
+
+        }
 
         System.out.println("Test failed");
     }
