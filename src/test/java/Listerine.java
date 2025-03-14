@@ -1,4 +1,39 @@
-package PACKAGE_NAME;
+import org.apache.logging.log4j.core.util.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 
-public class Listerine {
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Listerine extends Base implements ITestListener {
+
+    @Override
+    public void onTestStart(ITestResult result) {
+        System.out.println("Test started");
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        System.out.println("Test passed");
+    }
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+//        DateFormat dateFormat = new SimpleDateFormat("MMM.dd.yyyy hh:mm aaa");
+//        Date date = new Date();
+//        String name = dateFormat.format(date);
+//        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        try {
+//            FileUtils.copyFile(file, new File("src/test/failedTests/" + name +".png"));
+//        } catch (IOException e) {
+//
+//        }
+
+        System.out.println("Test failed");
+    }
 }
